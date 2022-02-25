@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1824ED63-BE4D-4306-919D-9C749C1AE271}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpDecryptPwd</RootNamespace>
+    <AssemblyName>SharpDecryptPwd</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SignAssembly>true</SignAssembly>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.2.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRUE WIN32 _MSC_VER NDEBUG NO_TCL SQLITE_ASCII SQLITE_DISABLE_LFS SQLITE_ENABLE_OVERSIZE_CELL_CHECK SQLITE_MUTEX_OMIT SQLITE_OMIT_AUTHORIZATION SQLITE_OMIT_DEPRECATED SQLITE_OMIT_GET_TABLE SQLITE_OMIT_INCRBLOB SQLITE_OMIT_LOOKASIDE SQLITE_OMIT_SHARED_CACHE SQLITE_OMIT_UTF16 SQLITE_OMIT_VIRTUALTABLE SQLITE_OS_WIN SQLITE_SYSTEM_MALLOC VDBE_PROFILE_OFF</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <NoWarn>0168 ; 0169; 0414; 0618; 0649; CS8632</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRUE WIN32 _MSC_VER NDEBUG NO_TCL SQLITE_ASCII SQLITE_DISABLE_LFS SQLITE_ENABLE_OVERSIZE_CELL_CHECK SQLITE_MUTEX_OMIT SQLITE_OMIT_AUTHORIZATION SQLITE_OMIT_DEPRECATED SQLITE_OMIT_GET_TABLE SQLITE_OMIT_INCRBLOB SQLITE_OMIT_LOOKASIDE SQLITE_OMIT_SHARED_CACHE SQLITE_OMIT_UTF16 SQLITE_OMIT_VIRTUALTABLE SQLITE_OS_WIN SQLITE_SYSTEM_MALLOC VDBE_PROFILE_OFF </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoWarn>0168 ; 0169; 0414; 0618; 0649</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SharpDecryptPwd.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Chrome.cs" />
+    <Compile Include="Commands\FileZilla.cs" />
+    <Compile Include="Commands\Foxmail.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\Navicat.cs" />
+    <Compile Include="Commands\RDCMan.cs" />
+    <Compile Include="Commands\Sunlogin.cs" />
+    <Compile Include="Commands\TeamViewer.cs" />
+    <Compile Include="Commands\Xmanager.cs" />
+    <Compile Include="Commands\TortoiseSVN.cs" />
+    <Compile Include="Commands\WinSCP.cs" />
+    <Compile Include="Domain\ArgumentParser.cs" />
+    <Compile Include="Domain\ArgumentParserContent.cs" />
+    <Compile Include="Domain\CommandCollection.cs" />
+    <Compile Include="Domain\ArgumentParserResult.cs" />
+    <Compile Include="Helpers\Info.cs" />
+    <Compile Include="Helpers\Writer.cs" />
+    <Compile Include="Lib\Crypt\AesGcm.cs" />
+    <Compile Include="Lib\SQLite\SQLiteDatabase.cs" />
+    <Compile Include="Lib\SQLite\SQLiteVdbe.cs" />
+    <Compile Include="Lib\SQLite\src\alter_c.cs" />
+    <Compile Include="Lib\SQLite\src\analyze_c.cs" />
+    <Compile Include="Lib\SQLite\src\attach_c.cs" />
+    <Compile Include="Lib\SQLite\src\auth_c.cs" />
+    <Compile Include="Lib\SQLite\src\backup_c.cs" />
+    <Compile Include="Lib\SQLite\src\bitvec_c.cs" />
+    <Compile Include="Lib\SQLite\src\btmutex_c.cs" />
+    <Compile Include="Lib\SQLite\src\BtreeInt_h.cs" />
+    <Compile Include="Lib\SQLite\src\btree_c.cs" />
+    <Compile Include="Lib\SQLite\src\Btree_h.cs" />
+    <Compile Include="Lib\SQLite\src\build_c.cs" />
+    <Compile Include="Lib\SQLite\src\callback_c.cs" />
+    <Compile Include="Lib\SQLite\src\complete_c.cs" />
+    <Compile Include="Lib\SQLite\src\date_c.cs" />
+    <Compile Include="Lib\SQLite\src\Delagates.cs" />
+    <Compile Include="Lib\SQLite\src\delete_c.cs" />
+    <Compile Include="Lib\SQLite\src\expr_c.cs" />
+    <Compile Include="Lib\SQLite\src\fault_c.cs" />
+    <Compile Include="Lib\SQLite\src\func_c.cs" />
+    <Compile Include="Lib\SQLite\src\global_c.cs" />
+    <Compile Include="Lib\SQLite\src\hash_c.cs" />
+    <Compile Include="Lib\SQLite\src\Hash_h.cs" />
+    <Compile Include="Lib\SQLite\src\hwtime_c.cs" />
+    <Compile Include="Lib\SQLite\src\insert_c.cs" />
+    <Compile Include="Lib\SQLite\src\journal_c.cs" />
+    <Compile Include="Lib\SQLite\src\keywordhash_h.cs" />
+    <Compile Include="Lib\SQLite\src\legacy_c.cs" />
+    <Compile Include="Lib\SQLite\src\loadext_c.cs" />
+    <Compile Include="Lib\SQLite\src\main_c.cs" />
+    <Compile Include="Lib\SQLite\src\malloc_c.cs" />
+    <Compile Include="Lib\SQLite\src\mem0_c.cs" />
+    <Compile Include="Lib\SQLite\src\mem1_c.cs" />
+    <Compile Include="Lib\SQLite\src\memjournal_c.cs" />
+    <Compile Include="Lib\SQLite\src\mutex_c.cs" />
+    <Compile Include="Lib\SQLite\src\mutex_h.cs" />
+    <Compile Include="Lib\SQLite\src\mutex_noop_c.cs" />
+    <Compile Include="Lib\SQLite\src\mutex_w32.cs" />
+    <Compile Include="Lib\SQLite\src\notify_c.cs" />
+    <Compile Include="Lib\SQLite\src\opcodes_c.cs" />
+    <Compile Include="Lib\SQLite\src\opcodes_h.cs" />
+    <Compile Include="Lib\SQLite\src\os_c.cs" />
+    <Compile Include="Lib\SQLite\src\os_common_h.cs" />
+    <Compile Include="Lib\SQLite\src\os_h.cs" />
+    <Compile Include="Lib\SQLite\src\os_win_c.cs" />
+    <Compile Include="Lib\SQLite\src\pager_c.cs" />
+    <Compile Include="Lib\SQLite\src\pager_h.cs" />
+    <Compile Include="Lib\SQLite\src\parse_c.cs" />
+    <Compile Include="Lib\SQLite\src\parse_h.cs" />
+    <Compile Include="Lib\SQLite\src\pcache1_c.cs" />
+    <Compile Include="Lib\SQLite\src\pcache_c.cs" />
+    <Compile Include="Lib\SQLite\src\pcache_h.cs" />
+    <Compile Include="Lib\SQLite\src\pragma_c.cs" />
+    <Compile Include="Lib\SQLite\src\prepare_c.cs" />
+    <Compile Include="Lib\SQLite\src\printf_c.cs" />
+    <Compile Include="Lib\SQLite\src\random_c.cs" />
+    <Compile Include="Lib\SQLite\src\resolve_c.cs" />
+    <Compile Include="Lib\SQLite\src\rowset_c.cs" />
+    <Compile Include="Lib\SQLite\src\select_c.cs" />
+    <Compile Include="Lib\SQLite\src\sqlite3ext_h.cs" />
+    <Compile Include="Lib\SQLite\src\sqlite3_h.cs" />
+    <Compile Include="Lib\SQLite\src\sqliteicu_h.cs" />
+    <Compile Include="Lib\SQLite\src\sqliteInt_h.cs" />
+    <Compile Include="Lib\SQLite\src\sqliteLimit_h.cs" />
+    <Compile Include="Lib\SQLite\src\status_c.cs" />
+    <Compile Include="Lib\SQLite\src\table_c.cs" />
+    <Compile Include="Lib\SQLite\src\tokenize_c.cs" />
+    <Compile Include="Lib\SQLite\src\trigger_c.cs" />
+    <Compile Include="Lib\SQLite\src\update_c.cs" />
+    <Compile Include="Lib\SQLite\src\utf_c.cs" />
+    <Compile Include="Lib\SQLite\src\util_c.cs" />
+    <Compile Include="Lib\SQLite\src\vacuum_c.cs" />
+    <Compile Include="Lib\SQLite\src\vdbeapi_c.cs" />
+    <Compile Include="Lib\SQLite\src\vdbeaux_c.cs" />
+    <Compile Include="Lib\SQLite\src\vdbeblob_c.cs" />
+    <Compile Include="Lib\SQLite\src\VdbeInt_h.cs" />
+    <Compile Include="Lib\SQLite\src\vdbemem_c.cs" />
+    <Compile Include="Lib\SQLite\src\vdbe_c.cs" />
+    <Compile Include="Lib\SQLite\src\Vdbe_h.cs" />
+    <Compile Include="Lib\SQLite\src\vtab_c.cs" />
+    <Compile Include="Lib\SQLite\src\walker_c.cs" />
+    <Compile Include="Lib\SQLite\src\where_c.cs" />
+    <Compile Include="Lib\SQLite\src\_Custom.cs" />
+    <Compile Include="Lib\Win32\bcrypt.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

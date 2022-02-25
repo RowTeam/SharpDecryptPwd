@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpDecryptPwd", "SharpDecryptPwd\SharpDecryptPwd.csproj", "{1824ED63-BE4D-4306-919D-9C749C1AE271}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1824ED63-BE4D-4306-919D-9C749C1AE271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1824ED63-BE4D-4306-919D-9C749C1AE271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1824ED63-BE4D-4306-919D-9C749C1AE271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1824ED63-BE4D-4306-919D-9C749C1AE271}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3741C1C0-19E8-466C-BAB4-B5757B0C5CF6}
+	EndGlobalSection
+EndGlobal
