@@ -90,7 +90,7 @@ namespace SharpDecryptPwd.Commands
                             if (session != null)
                             {
                                 string hostname = (session.GetValue("HostName") != null) ? session.GetValue("HostName").ToString() : "";
-                                if (string.IsNullOrEmpty(hostname))
+                                if (!string.IsNullOrEmpty(hostname))
                                 {
                                     try
                                     {
